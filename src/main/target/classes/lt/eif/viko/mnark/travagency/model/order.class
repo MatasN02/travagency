@@ -1,1 +1,142 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+package lt.eif.viko.mdanys.travelagency.model;
+
+import java.util.Iterator;
+import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlRootElement
+@XmlType(
+    propOrder = {"id", "orderDate", "travelers", "trips"}
+)
+@XmlAccessorType(XmlAccessType.FIELD)
+@Entity
+@Table(
+    name = "AgencyOrder"
+)
+public class Order {
+    @Id
+    @GeneratedValue(
+        strategy = GenerationType.AUTO
+    )
+    @Column(
+        name = "id"
+    )
+    private int id;
+    private String orderDate;
+    @XmlElementWrapper(
+        name = "travelers"
+    )
+    @XmlElement(
+        name = "traveler"
+    )
+    @ManyToMany(
+        targetEntity = Traveler.class,
+        cascade = {CascadeType.ALL}
+    )
+    private List<Traveler> travelers;
+    @XmlElementWrapper(
+        name = "trips"
+    )
+    @XmlElement(
+        name = "trip"
+    )
+    @OneToMany(
+        targetEntity = Trip.class,
+        cascade = {CascadeType.ALL}
+    )
+    private List<Trip> trips;
+
+    public Order() {
+    }
+
+    public Order(int id, String orderDate, List<Traveler> travelers, List<Trip> trips) {
+        this.id = id;
+        this.orderDate = orderDate;
+        this.travelers = travelers;
+        this.trips = trips;
+    }
+
+    public Order(String orderDate, List<Traveler> travelers, List<Trip> trips) {
+        this.orderDate = orderDate;
+        this.travelers = travelers;
+        this.trips = trips;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getOrderDate() {
+        return this.orderDate;
+    }
+
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public List<Traveler> getTravelers() {
+        return this.travelers;
+    }
+
+    public void setTravelers(List<Traveler> travelers) {
+        this.travelers = travelers;
+    }
+
+    public List<Trip> getTrips() {
+        return this.trips;
+    }
+
+    public void setTrips(List<Trip> trips) {
+        this.trips = trips;
+    }
+
+    public String toString() {
+        return String.format("Order:\n\t Date = %s\n\tTravelers: \n\t%sTrips:\n\t\t%s", this.orderDate, this.travelers, this.trips, this.constructTravelerString(), this.constructTripString());
+    }
+
+    private String constructTravelerString() {
+        String resultTraveler = "";
+
+        Traveler traveler;
+        for(Iterator var2 = this.travelers.iterator(); var2.hasNext(); resultTraveler = resultTraveler + traveler.toString()) {
+            traveler = (Traveler)var2.next();
+        }
+
+        return resultTraveler;
+    }
+
+    private String constructTripString() {
+        String resultTrip = "";
+
+        Trip trip;
+        for(Iterator var2 = this.trips.iterator(); var2.hasNext(); resultTrip = resultTrip + trip.toString()) {
+            trip = (Trip)var2.next();
+        }
+
+        return resultTrip;
+    }
+}
 
