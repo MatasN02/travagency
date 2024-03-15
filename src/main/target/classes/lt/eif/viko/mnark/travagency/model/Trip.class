@@ -1,1 +1,106 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+package lt.eif.viko.mdanys.travelagency.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(
+    name = "trip"
+)
+public class Trip {
+    @Id
+    @GeneratedValue(
+        strategy = GenerationType.AUTO
+    )
+    @Column(
+        name = "id"
+    )
+    private int id;
+    private String organizationName;
+    private String name;
+    private String location;
+    private String tripDuration;
+    private int cost;
+
+    public Trip() {
+    }
+
+    public Trip(int id, String organizationName, String name, String location, String tripDuration, int cost) {
+        this.id = id;
+        this.organizationName = organizationName;
+        this.name = name;
+        this.location = location;
+        this.tripDuration = tripDuration;
+        this.cost = cost;
+    }
+
+    public Trip(String organizationName, String name, String location, String tripDuration, int cost) {
+        this.organizationName = organizationName;
+        this.name = name;
+        this.location = location;
+        this.tripDuration = tripDuration;
+        this.cost = cost;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getOrganizationName() {
+        return this.organizationName;
+    }
+
+    public void setOrganizationName(String organizationName) {
+        this.organizationName = organizationName;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLocation() {
+        return this.location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getTripDuration() {
+        return this.tripDuration;
+    }
+
+    public void setTripDuration(String tripDuration) {
+        this.tripDuration = tripDuration;
+    }
+
+    public int getCost() {
+        return this.cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
+
+    public String toString() {
+        return String.format("\tTrip:\n\t\t\t\tOrganization Name = %s\n\t\t\t\tName = %s\n\t\t\t\tLocation = %s\n\t\t\t\tTrip Duration = %s\n\t\t\t\tCost = %s\n\t\t\t\t", this.organizationName, this.name, this.location, this.tripDuration, this.cost);
+    }
+}
 
