@@ -1,4 +1,4 @@
-package lt.eif.viko.mdanys.travelagency.model;
+package lt.eif.viko.mnark.travelagency.model;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Holds information about Travel Agency Orders.
  *
- * @author Martynas Danys
+ * @author Matas Narkunas
  * @since 1.0
  */
 @XmlRootElement
