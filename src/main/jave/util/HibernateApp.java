@@ -1,10 +1,10 @@
-package lt.eif.viko.mdanys.travelagency;
+package lt.eif.viko.mnark.travelagency;
 
-import lt.eif.viko.mdanys.travelagency.model.Order;
-import lt.eif.viko.mdanys.travelagency.model.Traveler;
-import lt.eif.viko.mdanys.travelagency.model.Trip;
-import lt.eif.viko.mdanys.travelagency.util.HibernateUtil;
-import lt.eif.viko.mdanys.travelagency.util.JaxbUtil;
+import lt.eif.viko.mnark.travelagency.model.Order;
+import lt.eif.viko.mnark.travelagency.model.Traveler;
+import lt.eif.viko.mnark.travelagency.model.Trip;
+import lt.eif.viko.mnark.travelagency.util.HibernateUtil;
+import lt.eif.viko.mnark.travelagency.util.JaxbUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
