@@ -3,7 +3,7 @@
 // (powered by FernFlower decompiler)
 //
 
-package lt.eif.viko.mdanys.travelagency;
+package lt.eif.viko.mnark.travelagency;
 
 import java.util.List;
 import javax.jms.JMSException;
